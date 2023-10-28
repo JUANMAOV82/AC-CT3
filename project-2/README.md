@@ -141,6 +141,6 @@ public class lightchange : MonoBehaviour
 
 ```
 ## Outcome
-<img width="1512" alt="Screenshot 2023-10-27 at 8 57 17 PM" src="https://github.com/GuanLuoyi/CreativeTechFA23/assets/95225808/3388742e-b5ff-48fe-8f45-23403966156b">
+<img width="1512" alt="10-26.png" src="https://github.com/JUANMAOV82/AC-CT3/blob/main/10-26.png">
 
 ### [Click to watch the video](https://youtu.be/1LQpFV82OjQ)
