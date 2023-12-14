@@ -44,8 +44,11 @@ In my second attempt, I tried dividing the image into multiple parts and using i
   ![c9d36e3e6f403f8642af016b1219ba6](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/a58f4d36-9659-4014-be43-c4e0758ec738)
   ![94fdb5ec8139d6c740e7b908658eed7](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/7c84e300-eb7e-401d-a183-9b5a03497cc1)
   ![04649ab66214ca35c122f590239ca63](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/794e9bae-1ca3-4382-b921-f97f2fa46535)
+Use the sin function to control the number of circles in a circle (the distance between circles)
   ![43ba2b4a2389d5eac9d98ca4be04abb](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/49cf12eb-d2b3-432f-90ae-55f9c3842963)
   ![390362b306a7566640d4ecde577c178](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/9353c807-584b-4710-b37e-e5880c62b91f)
+  ![0af6e00938d4c26f781d1746a4fc7e6](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/f98a7149-fea0-416c-82ff-53b15023c476)
+  ![8bc6c66d1eaf2a6c780ee27be51aa45](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/c8f0ba91-7b16-4c74-9de6-06fd08f218f7)
 
 
 
