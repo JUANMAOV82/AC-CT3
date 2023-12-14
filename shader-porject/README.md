@@ -10,5 +10,29 @@ In the first attempt, I tried to divide the picture into four parts, and used co
 
 #code
   ```GLSL
-  
+  void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+    // 1-2 Normalized pixel coordinates (from 0 to 1)
+    vec2 normalizedCoord = fragCoord/iResolution.xy * 2.0 - 1.0;
+    for (float i =0.0; i < 32.0; i += 1.0) 
+    {
+    
+    //1
+    normalizedCoord = abs(normalizedCoord);
+    
+    //2
+    normalizedCoord -= 0.5;
+    normalizedCoord *= 1.1;
+    normalizedCoord *=mat2(
+        cos(0.2), -sin(0.2),sin(0.2), cos(0.2)
+        );
+    }
+    
+    // Time varying pixel color
+    //vec3 col = 0.5 + 0.5*cos(iTime+uv.xyx+vec3(0,2,4));
+
+    //1-2 Output to screen
+    fragColor = vec4(vec3(length(normalizedCoord)),1.0);
+    
+}
 
