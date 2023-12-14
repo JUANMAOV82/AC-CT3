@@ -8,7 +8,7 @@ In the first attempt, I tried to divide the picture into four parts, and used co
   ![94f937c78002dac81cf3261289552e7](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/c620478c-10c9-4efc-8b76-3b9165587f5d)
   ![ef684c400bfc022243cf16b11e42e20](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/e1434f52-d0cb-4f35-ae55-c8a6120939ef)
 
-#code
+# code
   ```GLSL
   void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
@@ -50,5 +50,59 @@ Use the sin function to control the number of circles in a circle (the distance 
   ![0af6e00938d4c26f781d1746a4fc7e6](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/f98a7149-fea0-416c-82ff-53b15023c476)
   ![8bc6c66d1eaf2a6c780ee27be51aa45](https://github.com/JUANMAOV82/AC-CT3/assets/113642935/c8f0ba91-7b16-4c74-9de6-06fd08f218f7)
 
+# code
+In the coding part, the steps are also distinguished through comments, and the circular shape appears through absolute values (the center is negative, the outside is negative, and the circular position is zero), and the smmothstep function is used to achieve a seamless gradient for the circle.
+  ```GLSL
+vec3 palette( float t){
+    vec3 a = vec3(0.5, 0.5, 0.5);
+    vec3 b = vec3(0.5, 0.5, 0.5);
+    vec3 c = vec3(1.0, 1.0, 1.0);
+    vec3 d = vec3(0.263, 0.416, 0.557);
+    
+    return a + b*cos (6.28318* (c*t+d));
+}
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+    // 1-2 Normalized pixel coordinates (from 0 to 1)
+    //vec2 normalizedCoord = fragCoord/iResolution.xy * 2.0 - 1.0;
+    vec2 uv = fragCoord/iResolution.xy * 2.0 - 1.0;
+    
+    uv *= 2.0;
+    uv = fract(uv);
+    uv -= 0.5; 
+
+    //1
+    //normalizedCoord = abs(normalizedCoord);
+    
+    //2
+    //normalizedCoord -= 0.9;
+    //normalizedCoord *= 1.1;
+    
+    //3
+    uv.x *=iResolution.x / iResolution.y;
+    float d = length(uv);
+    
+    //vec3 col = vec3(0.7, 0.3, 0.1);
+    vec3 col = palette(d);
+    
+    //d -= 0.5;
+    d = sin(d*10.0 + iTime)/10.0;
+    d = abs(d);
+    //d = smoothstep(0.0, 0.1,d);
+    
+    d = 0.02 / d;
+
+    // Time varying pixel color
+    //vec3 col = 0.5 + 0.5*cos(iTime+uv.xyx+vec3(0,2,4));
+
+    // 1-2 Output to screen
+    //fragColor = vec4(vec3(length(normalizedCoord)),1.0);
+    
+    col *= d;
+    //3 Output to screen
+    fragColor = vec4(col,1.0);
+}
+  ```
 
 
